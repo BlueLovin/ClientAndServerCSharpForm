@@ -1,0 +1,12 @@
+E:\Visual Studio Projects\StarrettCodeChallenge\bin\Debug\StarrettCodeChallenge.exe.config
+E:\Visual Studio Projects\StarrettCodeChallenge\bin\Debug\StarrettCodeChallenge.exe
+E:\Visual Studio Projects\StarrettCodeChallenge\bin\Debug\StarrettCodeChallenge.pdb
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.csprojAssemblyReference.cache
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.Form1.resources
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.Properties.Resources.resources
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.csproj.GenerateResource.cache
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.csproj.CoreCompileInputs.cache
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.exe
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.pdb
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.AboutBox1.resources
+E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.Form1copy.resources
