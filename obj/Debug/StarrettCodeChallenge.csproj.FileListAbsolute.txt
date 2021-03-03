@@ -9,4 +9,3 @@ E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.
 E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.exe
 E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.pdb
 E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.AboutBox1.resources
-E:\Visual Studio Projects\StarrettCodeChallenge\obj\Debug\StarrettCodeChallenge.Form1copy.resources

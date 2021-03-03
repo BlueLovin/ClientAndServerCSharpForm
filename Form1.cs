@@ -37,12 +37,12 @@ namespace StarrettCodeChallenge
         public Form1(bool _isClient)
         {
             InitializeComponent();
-            Text = "Starrett - Server";
+            Text = "Starrett Bytewise, HIRE ME - Server";
             timer1.Interval = 50;
             timer1.Start();
             Ball ball1 = new Ball(10,50);
             Ball ball2 = new Ball(250,100);
-            Ball ball3 = new Ball(450,30);
+            Ball ball3 = new Ball(50,350);
             ball2.isSelected = true;
             BallList.Add(ball1);
             BallList.Add(ball2);
@@ -51,7 +51,7 @@ namespace StarrettCodeChallenge
             client_count = 0;
             if (_isClient)
             {
-                Text = "Starrett - Client";
+                Text = "Starrett Bytewise, HIRE ME - Client";
                 startServerToolStripMenuItem.Enabled = false;
                 startClientToolStripMenuItem.Enabled = false;
             }
@@ -230,7 +230,7 @@ namespace StarrettCodeChallenge
                     if (client.Connected)
                     {
                         StreamWriter writer = new StreamWriter(client.GetStream());
-                        writer.WriteLine(direction.ToString() + ";" + getSelectedBallID().ToString());
+                        writer.WriteLine(direction.ToString() + ";" + getSelectedBallID().ToString()); //"direction;id"
                         writer.Flush();
                     }
                 }
@@ -356,39 +356,25 @@ namespace StarrettCodeChallenge
             {
                 TcpClient _client = (TcpClient)tcpClient;
                 string input = string.Empty;
-                StreamReader reader = null;
-                StreamWriter writer = null;
 
 
                 try
                 {
-                    reader = new StreamReader(_client.GetStream());
-                    writer = new StreamWriter(_client.GetStream());
-
-                    // Tell the server we've connected
-                    //writer.WriteLine("Hello from a client! Ready to do your bidding!");
-                    writer.Flush();
-                    
+                    StreamReader reader = new StreamReader(_client.GetStream());
+                    StreamWriter writer = new StreamWriter(_client.GetStream());
                     while (_client.Connected)
                     {
-                        input = reader.ReadLine(); // block here until we receive something from the server.
-                        
-                        if (input == null)
-                        {
-                            //DisconnectFromServer();
-                        }
-                        else
-                        {
-                            string ballIDString = input.Substring(input.IndexOf(";") + 1);
-                            //very consolidated code, sorry lol. turns the first part of string transmitted into a direction enum. 
-                            Direction currentDirection = (Direction)Enum.Parse(typeof(Direction), input.Substring(0, input.IndexOf(";"))); //wtf?
-                            //MessageBox.Show(currentDirection.ToString());
-                            MoveBall(currentDirection, Convert.ToInt32(ballIDString));
-                            //MessageBox.Show(input);
-                        } // end if/else
+                        input = reader.ReadLine(); // blocks here until something is received from client
 
+                        string ballIDString = input.Substring(input.IndexOf(";") + 1);
+                        Direction currentDirection = (Direction)Enum.Parse(typeof(Direction), input.Substring(0, input.IndexOf(";"))); //wtf?
+                        //MessageBox.Show(currentDirection.ToString());
+                        MoveBall(currentDirection, Convert.ToInt32(ballIDString));
+                        //MessageBox.Show(input);
 
+                        writer.Flush();
                     }
+
                 }
                 catch (Exception ex)
                 {
